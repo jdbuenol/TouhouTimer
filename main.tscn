@@ -1,0 +1,201 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://images/chibi reimu.png" type="Texture" id=2]
+[ext_resource path="res://music/VocalMetal Bloody Devotion Akatsuki Records Subbed.ogg" type="AudioStream" id=3]
+
+[node name="main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 400.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+modulate = Color( 1, 1, 1, 0.415686 )
+position = Vector2( 200, 296 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 2 )
+
+[node name="Hours" type="Node2D" parent="ColorRect"]
+position = Vector2( 24, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Hours"]
+margin_left = 8.0
+margin_top = 224.0
+margin_right = 80.0
+margin_bottom = 352.0
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Hours/ColorRect"]
+margin_right = 18.0
+margin_bottom = 32.0
+rect_scale = Vector2( 4, 4 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="Button" parent="ColorRect/Hours"]
+margin_left = 8.0
+margin_top = 192.0
+margin_right = 80.0
+margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="Button" parent="ColorRect/Hours"]
+margin_left = 8.0
+margin_top = 360.0
+margin_right = 80.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Minutes" type="Node2D" parent="ColorRect"]
+position = Vector2( 160, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Minutes"]
+margin_left = 8.0
+margin_top = 224.0
+margin_right = 80.0
+margin_bottom = 352.0
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Minutes/ColorRect"]
+margin_right = 18.0
+margin_bottom = 32.0
+rect_scale = Vector2( 4, 4 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="Button" parent="ColorRect/Minutes"]
+margin_left = 8.0
+margin_top = 192.0
+margin_right = 80.0
+margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="Button" parent="ColorRect/Minutes"]
+margin_left = 8.0
+margin_top = 360.0
+margin_right = 80.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Seconds" type="Node2D" parent="ColorRect"]
+position = Vector2( 296, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Seconds"]
+margin_left = 8.0
+margin_top = 224.0
+margin_right = 80.0
+margin_bottom = 352.0
+color = Color( 0.501961, 0.501961, 0.501961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect/Seconds/ColorRect"]
+margin_right = 18.0
+margin_bottom = 32.0
+rect_scale = Vector2( 4, 4 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="Button" parent="ColorRect/Seconds"]
+margin_left = 8.0
+margin_top = 192.0
+margin_right = 80.0
+margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="Button" parent="ColorRect/Seconds"]
+margin_left = 8.0
+margin_top = 360.0
+margin_right = 80.0
+margin_bottom = 384.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="START" type="Button" parent="ColorRect"]
+margin_left = 80.0
+margin_top = 480.0
+margin_right = 184.0
+margin_bottom = 536.0
+text = "START"
+
+[node name="STOP" type="Button" parent="ColorRect"]
+margin_left = 216.0
+margin_top = 480.0
+margin_right = 320.0
+margin_bottom = 536.0
+text = "STOP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRect"]
+visible = false
+margin_left = 176.0
+margin_top = 552.0
+margin_right = 232.0
+margin_bottom = 584.0
+text = "OK"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="pressed" from="ColorRect/Hours/Up" to="." method="_on_UpHour_pressed"]
+[connection signal="pressed" from="ColorRect/Hours/Down" to="." method="_on_DownHour_pressed"]
+[connection signal="pressed" from="ColorRect/Minutes/Up" to="." method="_on_UpMinute_pressed"]
+[connection signal="pressed" from="ColorRect/Minutes/Down" to="." method="_on_DownMinute_pressed"]
+[connection signal="pressed" from="ColorRect/Seconds/Up" to="." method="_on_UpSecond_pressed"]
+[connection signal="pressed" from="ColorRect/Seconds/Down" to="." method="_on_DownSecond_pressed"]
+[connection signal="pressed" from="ColorRect/START" to="." method="_on_START_pressed"]
+[connection signal="pressed" from="ColorRect/STOP" to="." method="_on_STOP_pressed"]
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

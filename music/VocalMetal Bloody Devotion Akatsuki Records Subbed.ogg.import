@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/VocalMetal Bloody Devotion Akatsuki Records Subbed.ogg-218638226db414bada8f37a155bf7a7e.oggstr"
+
+[deps]
+
+source_file="res://music/VocalMetal Bloody Devotion Akatsuki Records Subbed.ogg"
+dest_files=[ "res://.import/VocalMetal Bloody Devotion Akatsuki Records Subbed.ogg-218638226db414bada8f37a155bf7a7e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
